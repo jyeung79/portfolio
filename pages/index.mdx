@@ -4,22 +4,34 @@ title: About
 date: 2021-03-19
 ---
 
-# Your Name
+import Image from "next/image";
+import Link from "next/link";
 
-Hey, I'm a Senior Software Engineer at Company. I enjoy working with Next.js and crafting beautiful front-end experiences.
+<div className="hidden w-screen h-px animate-glow md:block animate-fade-left from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+<h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
+  Jeffery Yeung
+</h1>
 
-This portfolio is built with **Next.js** and a library called [Nextra](https://nextra.vercel.app/). It allows you to write Markdown and focus on the _content_ of your portfolio.
-
-[**Deploy your own**](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/blog&project-name=portfolio&repository-name=portfolio) in a few minutes.
-
+<div className="flex animate-fade-in">
+  <Image
+    src="/images/jeffery_profile_1.jpg"
+    alt="Photo"
+    width={200}
+    height={200}
+    priority
+    className="rounded-3xl m-0 mr-8"
+  />
+  Hey 👋 I'm a Software Engineer working with React Native, Typescript, NodeJS and
+  Ruby on Rails. I've worked at Fintech startups such as
+  <strong className="underline">Borrowell</strong> and
+  <strong className="underline">Kora</strong>, on their Mobile Apps.
+</div>
 ---
 
 <div>
-  Twitter [@yourname](https://twitter.com/yourname)
-  <br />
-  GitHub [@yourname](https://github.com/yourname)
-  <br />
-  Instagram [@yourname](https://instagram.com/yourname)
-  <br />
-  Email your@name.com
+  LinkedIn [@jeffery-yeung](https://www.linkedin.com/in/jeffery-yeung/)
+  <div />
+  GitHub [@jyeung79](https://github.com/jyeung79)
+  <div />
+  Email jyeung.eng@gmail.com
 </div>

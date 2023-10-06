@@ -34,7 +34,7 @@ h6 {
   font-variation-settings: 'wght' 650;
 }
 h1 {
-  font-variation-settings: 'wght' 850;
+  font-variation-settings: 'wght' 250;
 }
 h2 {
   font-variation-settings: 'wght' 750;
@@ -46,6 +46,10 @@ h2 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+}
+
+.pro {
+  margin: 0;
 }
 
 details summary {
@@ -63,3 +67,11 @@ img.next-image {
 .nav-line .nav-link {
   color: #69778c;
 }
+
+.borderCircle {
+  border-radius: 9999px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
