@@ -1,7 +1,7 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
+import { siteConfig } from "@/config/site";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function IndexPage() {
   return (
@@ -9,7 +9,9 @@ export default function IndexPage() {
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-5xl font-extrabold leading-tight tracking-tighter md:text-5xl">
           Jeffery Yeung <br className="hidden sm:inline" />
-          <h1 className="md:text-xl tracking-normal">Software Engineer / Mobile Engineer - React Native</h1>
+          <h1 className="md:text-xl tracking-normal">
+            Software Engineer / Mobile Engineer - React Native
+          </h1>
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground">
           Accessible and customizable components that you can copy and paste
@@ -35,5 +37,5 @@ export default function IndexPage() {
         </Link>
       </div>
     </section>
-  )
+  );
 }
