@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
+  name: "Jeff Yeung",
   description:
     "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
   mainNav: [
@@ -11,8 +11,14 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
+    twitter: "https://twitter.com/jyeung79",
+    github: "https://github.com/jyeung79",
     docs: "https://ui.shadcn.com",
+    linkedin: "https://www.linkedin.com/in/jeffery-yeung/",
   },
+  tech: {
+    react: "https://react.dev/",
+    reactNative: "https://reactnative.dev/",
+    expo: "https://expo.dev",
+  }
 }
