@@ -3,6 +3,7 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Skills } from "@/components/technologies/skill-section";
+import { TechnologiesCarousel } from "@/components/technologies/technologies-carousel";
 
 export default function IndexPage() {
   return (
@@ -20,7 +21,8 @@ export default function IndexPage() {
         </p>
       </div>
       {/** All technologies List */}
-      <Skills />
+      <TechnologiesCarousel />
+      {/* <Skills /> */}
       <div className="flex gap-4">
         <Link
           href={siteConfig.links.docs}
