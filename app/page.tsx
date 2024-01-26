@@ -4,6 +4,8 @@ import { siteConfig } from "@/config/site";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Skills } from "@/components/technologies/skill-section";
 import { TechnologiesCarousel } from "@/components/technologies/technologies-carousel";
+import Image from "next/image";
+import { Projects } from "@/components/projects/projects";
 
 export default function IndexPage() {
   return (
@@ -19,6 +21,8 @@ export default function IndexPage() {
           Accessible and customizable components that you can copy and paste
           into your apps. Free. Open Source. And Next.js 13 Ready.
         </p>
+        <Image src="/profile/jeff_profile.jpg" width={500} height={500} alt="profile-image"/>
+        <Projects />
       </div>
       {/** All technologies List */}
       <TechnologiesCarousel />
