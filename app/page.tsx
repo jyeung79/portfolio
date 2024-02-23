@@ -2,31 +2,45 @@ import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Skills } from "@/components/technologies/skill-section";
 import { TechnologiesCarousel } from "@/components/technologies/technologies-carousel";
 import Image from "next/image";
 import { Projects } from "@/components/projects/projects";
 
 export default function IndexPage() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-5xl font-extrabold leading-tight tracking-tighter md:text-5xl">
+    <section className="container flex flex-col relative items-center justify-center">
+      <div className="my-4">
+        <h1 className="text-7xl font-extrabold leading-tight tracking-tighter md:text-9xl mb-4">
           Jeffery Yeung
         </h1>
-        <h2 className="font-bold md:text-xl">
+        <h2 className="font-bold md:text-xl mb-4">
           Software Engineer / Mobile Engineer - React Native
         </h2>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
-        </p>
-        <Image src="/profile/jeff_profile.jpg" width={500} height={500} alt="profile-image"/>
-        <Projects />
+        <div className="flex flex-row w-76 gap-8">
+          <Image
+            src="/profile/profile5.jpg"
+            width={300}
+            height={300}
+            quality={90}
+            alt="profile-image"
+            className={"rounded-3xl"}
+          />
+          <div className="max-w-[400px] px-8 py-4">
+            <p className="text-lg text-muted-foreground">
+              {`Mobile Software Engineer with over 2 years’ experience working with
+            Mobile and Full Stack development across multiple Fintech Saas
+            Startups.`}
+            </p>
+            <p className=" text-lg text-muted-foreground pt-8">
+              {`Highly dedicated and proactive in leading software
+            projects or rising up to solve the organization’s pressing needs or
+            problems.`}
+            </p>
+          </div>
+        </div>
       </div>
       {/** All technologies List */}
       <TechnologiesCarousel />
-      {/* <Skills /> */}
       <div className="flex gap-4">
         <Link
           href={siteConfig.links.docs}
@@ -45,6 +59,7 @@ export default function IndexPage() {
           GitHub
         </Link>
       </div>
+      {/* Experience Section */}
     </section>
   );
 }
