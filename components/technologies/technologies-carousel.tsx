@@ -6,7 +6,7 @@ export const TechnologiesCarousel = () => {
   return (
     <>
       <div className="w-full h-full m-auto overflow-hidden relative">
-        <div className="animate-loop-scroll flex w-min">
+        <div className="delay-2500 animate-loop-scroll flex w-min">
           {technologyList.map((item, index) => (
             <div key={`tech-item-${item.tech}-${index}`} className="w-36 h-24">
               <Image src={item.image} height="96" width="96" alt={item.tech} />

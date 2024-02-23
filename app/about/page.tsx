@@ -1,66 +1,66 @@
 import { DrawerDemo } from "@/components/drawer/drawer";
+import Particles from "@/components/particles";
+import { TechnologiesCarousel } from "@/components/technologies/technologies-carousel";
+import { buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-export default function ExperiencePage() {
+export default function AboutPage() {
   return (
-    <>
-      <div className="container mx-auto p-6">
-        <h1 className="md:text-6xl font-bold">About Me</h1>
-        <div className="mb-4">
-          <h2 className="text-3xl md:text-5xl font-semibold my-4">
-            Languages & Technologies
-          </h2>
-          <ul className="list-disc list-inside">
-            <li>
-              Languages: JavaScript, Typescript, HTML5, CSS3, Python, Ruby,
-              NoSQL, SQL
-            </li>
-            <li>
-              Framework: React, React Native, Node, Express, Redux, Firebase,
-              Ruby on Rails
-            </li>
-            <li>
-              Cert./Others: npm, styled-components, Tailwind, REST, GraphQL,
-              AWS, AWS Cloud Practitioner
-            </li>
-          </ul>
-        </div>
-        <div className="mb-4">
-          <h2 className="text-3xl md:text-5xl font-semibold my-4">Employment</h2>
-          <p>
-            <strong>
-              Software Engineer - Mobile, Borrowell - Toronto (Remote)
-            </strong>
-            Aug 2022 - Apr 2023
-          </p>
-          <p>
-            Oversaw all credit builder Mobile UI and Typescript code changes as
-            the primary Mobile UI Developer
-          </p>
-        </div>
-        <div className="mb-4">
-          <h2 className="text-3xl md:text-5xl font-semibold my-4">Education</h2>
-          <p>
-            <strong>
-              Bachelor of Applied Science - Systems Engineering, Simon Fraser
-              University
-            </strong>
-            {`2013 – 2020`}
-          </p>
-          <p>
-            Capstone Project: Emergency Indoor UWB Tracking Systems using Rust,
-            HTML, and CSS
-          </p>
-        </div>
-        <div className="mb-4">
-          <h3 className="text-lg font-bold mb-2">Technical Projects</h3>
-          <p>
-            <strong>IJN Bible App (2023-Current)</strong>Spaced Repetition
-            Flashcard Memorization App for Bible Verses (Expo, React Native,
-            NextJS, Supabase Storage/Auth, Solito, tRPC, Postgresql, Turborepo)
-          </p>
+    <div className="flex flex-col items-center justify-center h-screen overflow-hidden">
+      <div className="hidden h-px animate-glow md:block animate-fade-left" />
+      <h1 className="z-10 h-24 md:h-48 text-4xl text-transparent duration-3000 bg-white cursor-default text-edge-outline animate-title sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
+        Jeffery Yeung
+      </h1>
+      <div className="my-16 text-center animate-fade-in">
+        <h2 className="font-bold md:text-xl mb-4">
+          Software Engineer / Mobile Engineer - React Native
+        </h2>
+        <div className="flex sm:flex-row w-76 gap-8 flex-col">
+          <Image
+            src="/profile/profile5.jpg"
+            width={300}
+            height={300}
+            quality={90}
+            alt="profile-image"
+            className={"rounded-3xl"}
+          />
+          <div className="max-w-[400px] px-8 py-4">
+            <p className="text-lg text-muted-foreground">
+              {`Mobile Software Engineer with over 2 years’ experience working with
+            Mobile and Full Stack development across multiple Fintech Saas
+            Startups.`}
+            </p>
+            <p className=" text-lg text-muted-foreground pt-8">
+              {`Highly dedicated and proactive in leading software
+            projects or rising up to solve the organization’s pressing needs or
+            problems.`}
+            </p>
+          </div>
         </div>
       </div>
-    </>
+      {/** All technologies List */}
+      <div className="container flex flex-col animate-fade-in justify-center items-center">
+        <TechnologiesCarousel />
+        <Link
+          href={siteConfig.links.resume}
+          target="_blank"
+          rel="noreferrer"
+          className={buttonVariants()}
+        >
+          Resume
+        </Link>
+        <Link
+          target="_blank"
+          rel="noreferrer"
+          href={siteConfig.links.github}
+          className={buttonVariants({ variant: "outline" })}
+        >
+          GitHub
+        </Link>
+      </div>
+    </div>
   );
 }

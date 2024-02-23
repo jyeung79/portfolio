@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
+import Particles from "@/components/particles";
 
 export const metadata: Metadata = {
   title: {
@@ -41,6 +42,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
+              <Particles
+                className="absolute inset-0 -z-10 animate-fade-in"
+                quantity={200}
+              />
               <div className="flex-1">{children}</div>
             </div>
             <TailwindIndicator />

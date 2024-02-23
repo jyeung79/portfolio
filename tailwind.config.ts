@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -53,6 +53,11 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      transitionDelay: {
+        "2500": "2500ms",
+        "2750": "2750ms",
+        "3000": "3000ms",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -60,8 +65,8 @@ const config = {
       },
       keyframes: {
         "loop-scroll": {
-          from: { transform: "translateX(0)"},
-          to: { transform: "translateX(calc(-250px * 7))"}
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-250px * 7))" },
           // to: { transform: "translateX(-100%)"}
         },
         "accordion-down": {
@@ -72,15 +77,77 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-in": {
+          "0%": {
+            opacity: "0%",
+          },
+          "75%": {
+            opacity: "0%",
+          },
+          "100%": {
+            opacity: "100%",
+          },
+        },
+        "fade-left": {
+          "0%": {
+            transform: "translateX(100%)",
+            opacity: "0%",
+          },
+
+          "30%": {
+            transform: "translateX(0%)",
+            opacity: "100%",
+          },
+          "100%": {
+            opacity: "0%",
+          },
+        },
+        "fade-right": {
+          "0%": {
+            transform: "translateX(-100%)",
+            opacity: "0%",
+          },
+
+          "30%": {
+            transform: "translateX(0%)",
+            opacity: "100%",
+          },
+          "100%": {
+            opacity: "0%",
+          },
+        },
+        title: {
+          "0%": {
+            "line-height": "0%",
+            "letter-spacing": "0.25em",
+            opacity: "0",
+          },
+          "25%": {
+            "line-height": "0%",
+            opacity: "0%",
+          },
+          "80%": {
+            opacity: "100%",
+          },
+
+          "100%": {
+            "line-height": "100%",
+            opacity: "100%",
+          },
+        },
       },
       animation: {
         "loop-scroll": "loop-scroll 35s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 3s ease-in-out forwards",
+        title: "title 3s ease-out forwards",
+        "fade-left": "fade-left 3s ease-in-out forwards",
+        "fade-right": "fade-right 3s ease-in-out forwards",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
