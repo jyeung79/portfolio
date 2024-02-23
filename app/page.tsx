@@ -16,7 +16,7 @@ export default function IndexPage() {
         <h2 className="font-bold md:text-xl mb-4">
           Software Engineer / Mobile Engineer - React Native
         </h2>
-        <div className="flex flex-row w-76 gap-8">
+        <div className="flex sm:flex-row w-76 gap-8 flex-col">
           <Image
             src="/profile/profile5.jpg"
             width={300}
@@ -41,14 +41,14 @@ export default function IndexPage() {
       </div>
       {/** All technologies List */}
       <TechnologiesCarousel />
-      <div className="flex gap-4">
+      <div className="flex gap-4 my-4">
         <Link
-          href={siteConfig.links.docs}
+          href={siteConfig.links.resume}
           target="_blank"
           rel="noreferrer"
           className={buttonVariants()}
         >
-          Documentation
+          Resume
         </Link>
         <Link
           target="_blank"
