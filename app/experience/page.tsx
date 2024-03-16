@@ -9,6 +9,8 @@ import {
 import React from "react";
 import Image from "next/image";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import BorrowellLogo from "/public/companies/Borrowell.png";
+import KoraLogo from "/public/companies/Kora.png";
 
 export default function ExperiencePage() {
   return (
@@ -24,10 +26,7 @@ export default function ExperiencePage() {
           <Card>
             <CardHeader className="grid grid-cols-4 gap-4">
               <Image
-                src="/companies/Borrowell.png"
-                width={32}
-                height={32}
-                layout="responsive"
+                src={BorrowellLogo}
                 alt="Borrowell Logo"
                 className="col-span-1 place-self-center rounded-full"
               />
@@ -51,10 +50,7 @@ export default function ExperiencePage() {
           <Card>
             <CardHeader className="grid grid-cols-4 gap-4">
               <Image
-                src="/companies/Kora.png"
-                width={32}
-                height={32}
-                layout="responsive"
+                src={KoraLogo}
                 alt="Borrowell Logo"
                 className="col-span-1 place-self-center rounded-full"
               />
@@ -78,10 +74,7 @@ export default function ExperiencePage() {
           <Card>
             <CardHeader className="grid grid-cols-4 gap-4">
               <Image
-                src="/companies/kora.png"
-                width={32}
-                height={32}
-                layout="responsive"
+                src={KoraLogo}
                 alt="Borrowell Logo"
                 className="col-span-1 place-self-center rounded-full"
               />
