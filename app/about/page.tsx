@@ -9,57 +9,36 @@ import React from "react";
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen overflow-hidden">
-      <div className="hidden h-px animate-glow md:block animate-fade-left" />
-      <h1 className="z-10 h-24 md:h-48 text-4xl text-transparent duration-3000 bg-white cursor-default text-edge-outline animate-title sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-        Jeffery Yeung
+    <div className="container mx-auto p-6">
+      <h1 className="text-3xl font-bold tracking-wider md:text-6xl">
+        About Me
       </h1>
-      <div className="my-16 text-center animate-fade-in">
-        <h2 className="font-bold md:text-xl mb-4">
-          Software Engineer / Mobile Engineer - React Native
-        </h2>
-        <div className="flex sm:flex-row w-76 gap-8 flex-col">
-          <Image
-            src="/profile/profile5.jpg"
-            width={300}
-            height={300}
-            quality={90}
-            alt="profile-image"
-            className={"rounded-3xl"}
-          />
-          <div className="max-w-[400px] px-8 py-4">
-            <p className="text-lg text-muted-foreground">
-              {`Mobile Software Engineer with over 2 years’ experience working with
-            Mobile and Full Stack development across multiple Fintech Saas
-            Startups.`}
-            </p>
-            <p className=" text-lg text-muted-foreground pt-8">
-              {`Highly dedicated and proactive in leading software
-            projects or rising up to solve the organization’s pressing needs or
-            problems.`}
-            </p>
-          </div>
-        </div>
-      </div>
-      {/** All technologies List */}
-      <div className="container flex flex-col animate-fade-in justify-center items-center">
-        <TechnologiesCarousel />
-        <Link
-          href={siteConfig.links.resume}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
-        >
-          Resume
-        </Link>
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          GitHub
-        </Link>
+      <h2>Work in Progress ...</h2>
+      <div>
+        <h3>{`Here's a pic of a cat`}</h3>
+        <Image
+          src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          width={256}
+          height={128}
+          layout="responsive"
+          alt="cute cat"
+        />
+        <p>
+          Photo by{" "}
+          <Link
+            href="https://unsplash.com/@alvannee?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            className="text-blue-500"
+          >
+            Alvan Nee
+          </Link>
+          {" on "}
+          <Link
+            href="https://unsplash.com/photos/white-and-brown-long-fur-cat-ZCHj_2lJP00?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            className="text-blue-500"
+          >
+            Unsplash
+          </Link>
+        </p>
       </div>
     </div>
   );

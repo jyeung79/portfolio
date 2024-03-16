@@ -1,4 +1,4 @@
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Jeff Yeung",
@@ -20,17 +20,18 @@ export const siteConfig = {
     {
       title: "Other",
       href: "/other",
-    }
+    },
   ],
   links: {
     twitter: "https://twitter.com/jyeung79",
     github: "https://github.com/jyeung79",
     linkedin: "https://www.linkedin.com/in/jeffery-yeung/",
-    resume: "https://drive.google.com/file/d/1YfQTLZgkiY66wFi4tcIb8nviVtPK3eiG/view",
+    resume:
+      "https://drive.google.com/file/d/1eotCCAUsqZxzrayaW5ljxVcxX0-BcjQy/view?usp=sharing",
   },
   tech: {
     react: "https://react.dev/",
     reactNative: "https://reactnative.dev/",
     expo: "https://expo.dev",
-  }
-}
+  },
+};

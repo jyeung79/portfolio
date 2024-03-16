@@ -8,15 +8,16 @@ import { Projects } from "@/components/projects/projects";
 
 export default function IndexPage() {
   return (
-    <section className="container flex flex-col relative items-center justify-center">
-      <div className="my-4">
-        <h1 className="text-7xl font-extrabold leading-tight tracking-tighter md:text-9xl mb-4">
-          Jeffery Yeung
-        </h1>
-        <h2 className="font-bold md:text-xl mb-4">
+    <div className="flex h-screen flex-col items-center justify-center overflow-hidden">
+      <div className="animate-glow animate-fade-left hidden h-px md:block" />
+      <h1 className="duration-3000 text-edge-outline animate-title z-10 h-24 cursor-default whitespace-nowrap bg-white bg-clip-text text-4xl text-transparent sm:text-6xl md:h-48 md:text-9xl">
+        Jeffery Yeung
+      </h1>
+      <div className="animate-fade-in my-16 text-center">
+        <h2 className="mb-4 font-bold md:text-xl">
           Software Engineer / Mobile Engineer - React Native
         </h2>
-        <div className="flex sm:flex-row w-76 gap-8 flex-col">
+        <div className="w-76 flex flex-col gap-8 sm:flex-row">
           <Image
             src="/profile/profile5.jpg"
             width={300}
@@ -26,12 +27,12 @@ export default function IndexPage() {
             className={"rounded-3xl"}
           />
           <div className="max-w-[400px] px-8 py-4">
-            <p className="text-lg text-muted-foreground">
+            <p className="text-muted-foreground text-lg">
               {`Mobile Software Engineer with over 2 years’ experience working with
             Mobile and Full Stack development across multiple Fintech Saas
             Startups.`}
             </p>
-            <p className=" text-lg text-muted-foreground pt-8">
+            <p className=" text-muted-foreground pt-8 text-lg">
               {`Highly dedicated and proactive in leading software
             projects or rising up to solve the organization’s pressing needs or
             problems.`}
@@ -40,26 +41,27 @@ export default function IndexPage() {
         </div>
       </div>
       {/** All technologies List */}
-      <TechnologiesCarousel />
-      <div className="flex gap-4 my-4">
-        <Link
-          href={siteConfig.links.resume}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
-        >
-          Resume
-        </Link>
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          GitHub
-        </Link>
+      <div className="animate-fade-in container flex flex-col items-center justify-center">
+        <TechnologiesCarousel />
+        <div className="mt-4 space-x-4">
+          <Link
+            href={siteConfig.links.resume}
+            target="_blank"
+            rel="noreferrer"
+            className={buttonVariants()}
+          >
+            Resume
+          </Link>
+          <Link
+            target="_blank"
+            rel="noreferrer"
+            href={siteConfig.links.github}
+            className={buttonVariants({ variant: "outline" })}
+          >
+            GitHub
+          </Link>
+        </div>
       </div>
-      {/* Experience Section */}
-    </section>
+    </div>
   );
 }
