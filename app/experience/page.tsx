@@ -29,7 +29,7 @@ export default function ExperiencePage() {
                 height={32}
                 layout="responsive"
                 alt="Borrowell Logo"
-                className="col-span-1 place-self-center"
+                className="col-span-1 place-self-center rounded-full"
               />
               <div className="col-span-3">
                 <CardTitle className="text-2xl font-light md:text-3xl">
@@ -51,12 +51,12 @@ export default function ExperiencePage() {
           <Card>
             <CardHeader className="grid grid-cols-4 gap-4">
               <Image
-                src="/companies/Borrowell.png"
+                src="/companies/Kora.png"
                 width={32}
                 height={32}
                 layout="responsive"
                 alt="Borrowell Logo"
-                className="col-span-1 place-self-center"
+                className="col-span-1 place-self-center rounded-full"
               />
               <div className="col-span-3">
                 <CardTitle className="text-xl font-light md:text-3xl">
@@ -78,12 +78,12 @@ export default function ExperiencePage() {
           <Card>
             <CardHeader className="grid grid-cols-4 gap-4">
               <Image
-                src="/companies/Borrowell.png"
+                src="/companies/kora.png"
                 width={32}
                 height={32}
                 layout="responsive"
                 alt="Borrowell Logo"
-                className="col-span-1 place-self-center"
+                className="col-span-1 place-self-center rounded-full"
               />
               <div className="col-span-3">
                 <CardTitle className="text-xl font-light md:text-3xl">
