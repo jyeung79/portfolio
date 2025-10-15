@@ -11,6 +11,9 @@ import Image from "next/image";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import BorrowellLogo from "/public/companies/Borrowell.png";
 import KoraLogo from "/public/companies/Kora.png";
+import BWSLogo from "/public/companies/BuiltWithScience.png";
+import QiSolutionLogo from "/public/companies/QiBusinessSolutions.png";
+import SFULogo from "/public/companies/SFU.jpeg";
 
 export default function ExperiencePage() {
   return (
@@ -26,6 +29,58 @@ export default function ExperiencePage() {
           <Card>
             <CardHeader className="grid grid-cols-4 gap-4">
               <Image
+                src={QiSolutionLogo}
+                alt="Qi Business Solutions Logo"
+                className="col-span-1 place-self-center"
+              />
+              <div className="col-span-3">
+                <CardTitle className="text-2xl font-light md:text-3xl">
+                  IT Strategy & Web Dev Lead
+                </CardTitle>
+                <h3 className="text-lg text-slate-700 dark:text-slate-200">
+                  Qi Business Solutions - Vancouver
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Apr 2025 - Current{" "}
+                </p>
+              </div>
+            </CardHeader>
+            <CardContent className="gap-2">
+              <p className="tracking-wide">
+                Lead branding, website development, and IT strategy to establish
+                a consistent, high-performing digital presence.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="grid grid-cols-4 gap-4">
+              <Image
+                src={BWSLogo}
+                alt="BuiltWithScience Logo"
+                className="col-span-1 place-self-center rounded-full"
+              />
+              <div className="col-span-3">
+                <CardTitle className="text-2xl font-light md:text-3xl">
+                  Software Engineer
+                </CardTitle>
+                <h3 className="text-lg text-slate-700 dark:text-slate-200">
+                  BuiltWithScience - Vancouver
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Apr 2024 - Feb 2025
+                </p>
+              </div>
+            </CardHeader>
+            <CardContent className="gap-2">
+              <p className="tracking-wide">
+                Drove the successful launch of BWS + reaching 10,000+ MAU
+                (monthly active users) with positive revenue.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="grid grid-cols-4 gap-4">
+              <Image
                 src={BorrowellLogo}
                 alt="Borrowell Logo"
                 className="col-span-1 place-self-center rounded-full"
@@ -34,10 +89,12 @@ export default function ExperiencePage() {
                 <CardTitle className="text-2xl font-light md:text-3xl">
                   Software Engineer - Mobile
                 </CardTitle>
-                <h3 className="text-lg text-slate-200">
+                <h3 className="text-lg text-slate-700 dark:text-slate-200">
                   Borrowell - Toronto (Remote)
                 </h3>
-                <p className="text-slate-400">Aug 2022 - Apr 2023</p>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Aug 2022 - Apr 2023
+                </p>
               </div>
             </CardHeader>
             <CardContent className="gap-2">
@@ -58,10 +115,12 @@ export default function ExperiencePage() {
                 <CardTitle className="text-xl font-light md:text-3xl">
                   Software Engineer I / II
                 </CardTitle>
-                <h3 className="text-lg text-slate-200">
+                <h3 className="text-lg text-slate-700 dark:text-slate-200">
                   Kora - Toronto (Remote)
                 </h3>
-                <p className="text-slate-400">May 2021 - Mar 2022</p>
+                <p className="text-slate-600 dark:text-slate-400">
+                  May 2021 - Mar 2022
+                </p>
               </div>
             </CardHeader>
             <CardContent className="grid gap-2">
@@ -82,10 +141,12 @@ export default function ExperiencePage() {
                 <CardTitle className="text-xl font-light md:text-3xl">
                   Software Engineer Intern
                 </CardTitle>
-                <h3 className="text-lg text-slate-200">
+                <h3 className="text-lg text-slate-700 dark:text-slate-200">
                   Kora - Toronto (Remote)
                 </h3>
-                <p className="text-slate-400">Jan 2021 – Apr 2021</p>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Jan 2021 – Apr 2021
+                </p>
               </div>
             </CardHeader>
             <CardContent className="grid gap-2">
@@ -155,15 +216,20 @@ export default function ExperiencePage() {
         </h2>
         <div className="grid grid-cols-1 items-start">
           <Card className="p-2">
-            <CardHeader>
+            <CardHeader className="flex-row items-center">
+              <Image
+                src={SFULogo}
+                alt="Simon Fraser University Logo"
+                className="rounded-2xl mr-4"
+              />
               <CardTitle className="text-xl font-light md:text-3xl">
                 Bachelor of Applied Science - Systems Engineering
+                <h3 className="text-lg font-semibold md:text-2xl">
+                  Simon Fraser University
+                </h3>
               </CardTitle>
-              <h3 className="text-lg font-semibold md:text-2xl">
-                Simon Fraser University
-              </h3>
             </CardHeader>
-            <CardContent className="grid gap-2">
+            <CardContent className="grid gap-1">
               <p className="tracking-wide">
                 Capstone Project: Emergency Indoor UWB Tracking Systems using
                 Rust, HTML, and CSS

@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import { useMousePosition } from "@/lib/mouse";
+import { useTheme } from "next-themes";
 
 interface ParticlesProps {
   className?: string;
@@ -26,31 +27,33 @@ export default function Particles({
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
+  const { theme } = useTheme();
+  const color = theme === "dark" ? "255, 255, 255" : "0, 0, 0";
 
   useEffect(() => {
     if (canvasRef.current) {
       context.current = canvasRef.current.getContext("2d");
     }
-    initCanvas();
-    animate();
-    window.addEventListener("resize", initCanvas);
+    initCanvas(color);
+    animate(color);
+    window.addEventListener("resize", () => initCanvas(color));
 
     return () => {
-      window.removeEventListener("resize", initCanvas);
+      window.removeEventListener("resize", () => initCanvas(color));
     };
-  }, []);
+  }, [theme]);
 
   useEffect(() => {
     onMouseMove();
   }, [mousePosition.x, mousePosition.y]);
 
   useEffect(() => {
-    initCanvas();
+    initCanvas(color);
   }, [refresh]);
 
-  const initCanvas = () => {
+  const initCanvas = (color: string) => {
     resizeCanvas();
-    drawParticles();
+    drawParticles(color);
   };
 
   const onMouseMove = () => {
@@ -75,6 +78,7 @@ export default function Particles({
     size: number;
     alpha: number;
     targetAlpha: number;
+    color: string;
     dx: number;
     dy: number;
     magnetism: number;
@@ -93,12 +97,12 @@ export default function Particles({
     }
   };
 
-  const circleParams = (): Circle => {
+  const circleParams = (color: string): Circle => {
     const x = Math.floor(Math.random() * canvasSize.current.w);
     const y = Math.floor(Math.random() * canvasSize.current.h);
     const translateX = 0;
     const translateY = 0;
-    const size = Math.floor(Math.random() * 2) + 0.1;
+    const size = Math.floor(Math.random() * 2) + 2;
     const alpha = 0;
     const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1));
     const dx = (Math.random() - 0.5) * 0.2;
@@ -112,6 +116,7 @@ export default function Particles({
       size,
       alpha,
       targetAlpha,
+      color,
       dx,
       dy,
       magnetism,
@@ -120,11 +125,11 @@ export default function Particles({
 
   const drawCircle = (circle: Circle, update = false) => {
     if (context.current) {
-      const { x, y, translateX, translateY, size, alpha } = circle;
+      const { x, y, translateX, translateY, size, alpha, color } = circle;
       context.current.translate(translateX, translateY);
       context.current.beginPath();
       context.current.arc(x, y, size, 0, 2 * Math.PI);
-      context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+      context.current.fillStyle = `rgba(${color ?? "255, 255, 255"}, ${alpha})`;
       context.current.fill();
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 
@@ -145,11 +150,11 @@ export default function Particles({
     }
   };
 
-  const drawParticles = () => {
+  const drawParticles = (color: string) => {
     clearContext();
     const particleCount = quantity;
     for (let i = 0; i < particleCount; i++) {
-      const circle = circleParams();
+      const circle = circleParams(color);
       drawCircle(circle);
     }
   };
@@ -166,7 +171,7 @@ export default function Particles({
     return remapped > 0 ? remapped : 0;
   };
 
-  const animate = () => {
+  const animate = (color: string) => {
     clearContext();
     circles.current.forEach((circle: Circle, i: number) => {
       // Handle the alpha value
@@ -206,7 +211,7 @@ export default function Particles({
         // remove the circle from the array
         circles.current.splice(i, 1);
         // create a new circle
-        const newCircle = circleParams();
+        const newCircle = circleParams(color);
         drawCircle(newCircle);
         // update the circle position
       } else {
@@ -223,7 +228,7 @@ export default function Particles({
         );
       }
     });
-    window.requestAnimationFrame(animate);
+    window.requestAnimationFrame(() => animate(color));
   };
 
   return (
