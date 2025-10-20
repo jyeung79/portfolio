@@ -27,7 +27,7 @@ export const siteConfig = {
     github: "https://github.com/jyeung79",
     linkedin: "https://www.linkedin.com/in/jeffery-yeung/",
     resume:
-      "https://drive.google.com/file/d/1l57LEPdHkqXy84dzKe-x01DsZ_vNkLWC/view?usp=sharing",
+      "https://drive.google.com/file/d/1o48f2xI9UpZF6wEPf68MtYT49llHyMXt/view?usp=sharing",
   },
   tech: {
     react: "https://react.dev/",
